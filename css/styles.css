@@ -89,7 +89,6 @@ address {
     margin: 0 auto;
   }
 }
-
 .portfolio {
   border-bottom: 1px solid var(--cornflower);
 }
@@ -132,12 +131,16 @@ button {
 .header .container {
   display: flex;
   align-items: center;
+  padding: 16px 0;
 }
-
+@media only screen and (min-width: 768px) {
+  .header .container {
+    padding: 0;
+  }
+}
 .header-nav {
   display: flex;
   align-items: center;
-
   flex-grow: 1;
 }
 
@@ -188,15 +191,28 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  color: var(--slate);
 }
 .contacts:hover,
 .contacts:focus {
   color: var(--ocean);
+}
+
+@media only screen and (min-width: 768px) {
+  contacts {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: var(--slate);
+  }
+}
+@media only screen and (min-width: 11588px) {
+  contacts {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: var(--slate);
+  }
 }
 
 .nav-list .nav-link:hover,
@@ -209,12 +225,26 @@ button {
 .nav-item {
   position: relative;
 }
+@media only screen and (min-width: 768px) {
+  .address-list {
+    padding: 16px 0;
+  }
+  .contact-mail {
+    padding-bottom: 12px;
+  }
+  .header-nav {
+    padding: 0;
+  }
+}
 
 @media only screen and (min-width: 1158px) {
   .address-list {
     display: flex;
     gap: 40px;
     align-items: center;
+  }
+  .contact-mail {
+    padding-bottom: 0;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -266,7 +296,7 @@ button {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 6, 0.7)
       ),
-      url("../images/hero/mob@2x.png");
+      url("../images/hero/mob@2x.jpg");
   }
 }
 
@@ -415,6 +445,21 @@ button {
 
 .strategy-title {
   margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11111;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--navy-blue);
+}
+
+@media only screen and (min-width: 768px) {
+  .strategy-title {
+    text-transform: capitalize;
+    color: var(--navy-blue);
+    text-align: start;
+  }
 }
 .strategy-text {
   line-height: 1.5;
@@ -428,6 +473,13 @@ button {
 @media only screen and (min-width: 1158px) {
   .promo {
     padding-bottom: 120px;
+  }
+  .strategy-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: start;
+    color: var(--navy-blue);
   }
 }
 
@@ -777,7 +829,6 @@ button {
   flex-grow: 1;
   gap: 72px;
 }
-
 @media only screen and (min-width: 768px) {
   .footer-wrapper {
     flex-direction: row;
@@ -785,7 +836,7 @@ button {
     column-gap: 24px;
     row-gap: 72px;
     align-items: baseline;
-    padding: 0 108px;
+    width: 584px;
   }
   .footer-socials {
     align-items: start;
@@ -804,7 +855,7 @@ button {
   .footer-wrapper {
     display: flex;
     gap: 0;
-    padding: 0;
+    width: auto;
   }
   .footer-socials {
     margin-right: 80px;
@@ -894,22 +945,7 @@ button {
 .footer-link:focus {
   background: var(--green);
 }
-.footer-subscribe {
-}
-@media only screen and (min-width: 1158px) {
-  .subscribe-wrapper {
-    margin-left: 80px;
-  }
-}
 
-.subscribe-label {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  text-align: center;
-}
 .subscribe-wrapper {
   display: flex;
   flex-direction: column;
@@ -921,12 +957,20 @@ button {
     display: inline;
   }
 }
-
 @media only screen and (min-width: 1158px) {
   .subscribe-wrapper {
-    margin-left: 80px;
+    /* margin-left: 80px; */
   }
 }
+.subscribe-label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-align: center;
+}
+
 .subscribe-field {
   display: flex;
   flex-direction: column;
@@ -938,13 +982,14 @@ button {
     gap: 24px;
   }
 }
+
 .subscribe-email {
   margin-top: 16px;
   margin-bottom: 16px;
   background: var(--navy-blue);
   border: 1px solid var(--white);
   border-radius: 4px;
-  width: 398px;
+  width: 320px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   opacity: 0.3;
